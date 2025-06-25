@@ -6,10 +6,10 @@ import { AppointmentCta } from "../../components/AppointmentCta";
 import { HeroContact } from "../../components/hero-1/HeroContact";
 import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 import { questionProstatitis } from "@/data/questions/questionProstatitis";
-import { quitoData } from "@/data/sedes/quito";    
+import { principalData } from "@/data/sedes/principal";
 import { Footer } from "@/app/components/Footer";
 
-export default function ProstatitisQuito() {
+export default function ProstatitisPrincipal() {
   return (
     <>
       <HeroContact  
@@ -74,20 +74,20 @@ export default function ProstatitisQuito() {
         title="Recupera tu calidad de vida con nuestro tratamiento avanzado con Ondas de Choque"
         description="Nuestro equipo de especialistas está listo para ayudarte a dar el primer paso hacia tu bienestar."
         titleMobile="Recupera tu calidad de vida con nuestro tratamiento avanzado con Ondas de Choque "
-        whatsappNumber={quitoData.landings.prostatitis.whatsapp}
-        whatsappMessage={quitoData.landings.prostatitis.message}
+        whatsappNumber={principalData.landings.prostatitis.whatsapp}
+        whatsappMessage={principalData.landings.prostatitis.message}
       />
       <Questions questions={questionProstatitis} />
       <FloatingWhatsApp
-        phoneNumber={quitoData.landings.prostatitis.whatsapp}
-        message={quitoData.landings.prostatitis.message}
+        phoneNumber={principalData.landings.prostatitis.whatsapp}
+        message={principalData.landings.prostatitis.message}
         tooltipText="¡Conversemos por WhatsApp!"
       />
-                    <Footer
-          address={quitoData.address}
-          phone={quitoData.landings.prostatitis.whatsapp}
-          email={quitoData.email}
-          socials={quitoData.socials}
+            <Footer
+          address={principalData.address}
+          phone={principalData.landings.prostatitis.whatsapp}
+          email={principalData.email}
+          socials={principalData.socials}
         />
     </>
   );

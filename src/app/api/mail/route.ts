@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e2e8f0;">
                                     <td style="padding: 8px 0; font-weight: bold; color: #374151;">Teléfono:</td>
-                                    <td style="padding: 8px 0; color: #6b7280;"><a href="tel:+593${telefono}" style="color: #2563eb; text-decoration: none;">+593 ${telefono}</a></td>
+                                    <td style="padding: 8px 0; color: #6b7280;"><a href="tel:+507${telefono}" style="color: #2563eb; text-decoration: none;">+507 ${telefono}</a></td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e2e8f0;">
                                     <td style="padding: 8px 0; font-weight: bold; color: #374151;">Turno preferido:</td>
@@ -92,7 +92,7 @@ export async function POST(req: NextRequest) {
                             <table style="width: 100%; border-collapse: collapse;">
                                 <tr style="border-bottom: 1px solid #fde68a;">
                                     <td style="padding: 8px 0; font-weight: bold; color: #374151;">Fecha:</td>
-                                    <td style="padding: 8px 0; color: #6b7280;">${new Date().toLocaleDateString('es-PE', { 
+                                    <td style="padding: 8px 0; color: #6b7280;">${new Date().toLocaleDateString('es-PA', { 
                                         weekday: 'long', 
                                         year: 'numeric', 
                                         month: 'long', 
@@ -101,7 +101,7 @@ export async function POST(req: NextRequest) {
                                 </tr>
                                 <tr style="border-bottom: 1px solid #fde68a;">
                                     <td style="padding: 8px 0; font-weight: bold; color: #374151;">Hora:</td>
-                                    <td style="padding: 8px 0; color: #6b7280;">${new Date().toLocaleTimeString('es-PE')}</td>
+                                    <td style="padding: 8px 0; color: #6b7280;">${new Date().toLocaleTimeString('es-PA')}</td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 8px 0; font-weight: bold; color: #374151;">Página origen:</td>

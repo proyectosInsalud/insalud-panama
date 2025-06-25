@@ -20,12 +20,11 @@ export const TRATAMIENTOS = {
 } as const;
 
 export const SEDES = {
-  QUITO: 'Quito',
-  GUAYAQUIL: 'Guayaquil'
+  PANAMA: 'Panamá'
 } as const;
 
 export const FORM_VALIDATION_MESSAGES = {
   REQUIRED: 'Este campo es requerido',
-  INVALID_PHONE: 'Número de teléfono ecuatoriano inválido (debe iniciar con 09)',
+  INVALID_PHONE: 'Número de teléfono panameño inválido (debe tener 8 dígitos)',
   MIN_NAMES: 'El nombre debe tener al menos 2 caracteres'
 } as const; 

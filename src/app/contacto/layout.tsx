@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
 import { NavigationSection } from "@/app/components/NavigationSection";
-import { quitoData } from "@/data/sedes/quito";
+import { principalData } from "@/data/sedes/principal";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -9,28 +9,28 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: `Insalud ${quitoData.name}`,
+  title: `Insalud ${principalData.name}`,
   description: "Red de centros de salud especializados en brindar soluciones integrales en el ámbito de la salud sexual.",
   keywords: "centro médico, hospital, servicios médicos, especialistas médicos, atención médica especializada, urologia, vph, verruga, disfunción eréctil, prostatitis, ondas de choque",
-  authors: [{ name: `Insalud ${quitoData.name}` }],
-  creator: `Insalud ${quitoData.name}`,
-  publisher: `Insalud ${quitoData.name}`,
+  authors: [{ name: `Insalud ${principalData.name}` }],
+  creator: `Insalud ${principalData.name}`,
+  publisher: `Insalud ${principalData.name}`,
   robots: "index, follow",
   openGraph: {
-    title: `Insalud ${quitoData.name}`,
+    title: `Insalud ${principalData.name}`,
     description: "Red de centros de salud especializados en brindar soluciones integrales en el ámbito de la salud sexual.",
     type: "website",
-    locale: "es_EC",
-    siteName: `Insalud ${quitoData.name}`,
+    locale: "es_PA",
+    siteName: `Insalud ${principalData.name}`,
   },
   twitter: {
     card: "summary_large_image",
-    title: `Insalud ${quitoData.name}`,
+    title: `Insalud ${principalData.name}`,
     description: "Red de centros de salud especializados en brindar soluciones integrales en el ámbito de la salud sexual.",
   },
 };
 
-export default function QuitoLayout({
+export default function PrincipalLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -41,9 +41,7 @@ export default function QuitoLayout({
         className={`antialiased`}
         suppressHydrationWarning
       >
-        <NavigationSection sede={quitoData.name} 
-          srcLogo={'/shared/logos/insalud-sede-quito.svg'}
-        />
+        <NavigationSection sede={principalData.name} srcLogo={'/shared/logos/insalud-sede-panama.svg'} />
         {children}
 
       </body>

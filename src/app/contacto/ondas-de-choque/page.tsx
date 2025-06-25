@@ -7,9 +7,9 @@ import { TestimonialBubbles } from "@/app/components/TestimonialBubbles";
 import { Treatment } from "@/app/components/Treatment/Treatment";
 import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 import { questionDisfuncion } from "@/data/questions/questionDisfuncion";
-import { guayaquilData } from "@/data/sedes/guayaquil";
+import { principalData } from "@/data/sedes/principal";
 
-export default function OndasGuayaquilPage() {
+export default function OndasPrincipalPage() {
   return (
     <>
       {/* Hero Section */}
@@ -83,8 +83,8 @@ export default function OndasGuayaquilPage() {
                 title="Recupera tu confianza con Ondas de Choque de Alta Frecuencia, un tratamiento no invasivo y clínicamente probado para mejorar la erección de forma natural y duradera."
                 description="Nuestro equipo de especialistas está listo para ayudarte a dar el primer paso hacia tu bienestar."
                 titleMobile="Recupera tu confianza con un tratamiento clínico eficaz y personalizado"
-                whatsappNumber={guayaquilData.landings.ondasChoque.whatsapp}
-                whatsappMessage={guayaquilData.landings.ondasChoque.message}
+                whatsappNumber={principalData.landings.ondasChoque.whatsapp}
+                whatsappMessage={principalData.landings.ondasChoque.message}
             />
 
       {/* Preguntas Section */}
@@ -94,16 +94,16 @@ export default function OndasGuayaquilPage() {
 
       {/* WhatsApp Flotante */}
       <FloatingWhatsApp
-        phoneNumber={guayaquilData.landings.ondasChoque.whatsapp}
-        message={guayaquilData.landings.ondasChoque.message}
+        phoneNumber={principalData.landings.ondasChoque.whatsapp}
+        message={principalData.landings.ondasChoque.message}
         tooltipText="¿Dudas sobre disfunción eréctil?"
       />
 
       <Footer
-          address={guayaquilData.address}
-          phone={guayaquilData.landings.ondasChoque.whatsapp}
-          email={guayaquilData.email}
-          socials={guayaquilData.socials}
+          address={principalData.address}
+          phone={principalData.landings.ondasChoque.whatsapp}
+          email={principalData.email}
+          socials={principalData.socials}
         />
     </>
   );

@@ -28,27 +28,27 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Insalud Ecuador",
+  title: "Insalud Panamá",
   description: "Red de centros de salud especializados en brindar soluciones integrales en el ámbito de la salud sexual.",
-  keywords: "centro médico quito, hospital quito, servicios médicos ecuador, especialistas médicos, atención médica especializada, urologia, vph, verruga, vih, ondas de choque",
-  authors: [{ name: "Insalud Ecuador" }],
-  creator: "Insalud Ecuador",
-  publisher: "Insalud Ecuador",
+  keywords: "centro médico panamá, hospital panamá, servicios médicos panamá, especialistas médicos, atención médica especializada, urologia, vph, verruga, vih, ondas de choque",
+  authors: [{ name: "Insalud Panamá" }],
+  creator: "Insalud Panamá",
+  publisher: "Insalud Panamá",
   robots: "index, follow",
   openGraph: {
-    title: "Insalud Ecuador",
+    title: "Insalud Panamá",
     description: "Red de centros de salud especializados en brindar soluciones integrales en el ámbito de la salud sexual.",
     type: "website",
-    locale: "es_EC",
-    siteName: "Insalud Ecuador",
+    locale: "es_PA",
+    siteName: "Insalud Panamá",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Insalud Ecuador",
+    title: "Insalud Panamá",
     description: "Red de centros de salud especializados en brindar soluciones integrales en el ámbito de la salud sexual.",
   },
   alternates: {
-    canonical: "https://insalud.ec",
+    canonical: "https://insalud.pa",
   },
 };
 

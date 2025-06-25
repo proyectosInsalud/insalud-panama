@@ -1,10 +1,10 @@
 # 🏥 Insalud - Plataforma de Landing Pages Médicas
 
-Una plataforma web moderna desarrollada con **Next.js 15** para **Insalud**, red de centros médicos especializados en salud sexual en Ecuador. El proyecto implementa un sistema de landing pages dinámicas para diferentes sedes y tratamientos médicos especializados.
+Una plataforma web moderna desarrollada con **Next.js 15** para **Insalud**, red de centros médicos especializados en salud sexual en Panamá. El proyecto implementa un sistema de landing pages dinámicas para diferentes sedes y tratamientos médicos especializados.
 
 ## 🌟 Características Principales
 
-- **🏢 Multi-sede**: Soporte para múltiples ubicaciones (Quito, Guayaquil)
+- **🏢 Multi-sede**: Soporte para múltiples ubicaciones (Ciudad de Panamá)
 - **💉 Multi-tratamiento**: Páginas especializadas para VPH, Ondas de Choque, Prostatitis
 - **📱 Responsive**: Diseño completamente adaptativo para móviles y desktop
 - **⚡ Performance**: Optimizado con Next.js 15 y Turbopack
@@ -43,7 +43,7 @@ Una plataforma web moderna desarrollada con **Next.js 15** para **Insalud**, red
 ## 📁 Estructura del Proyecto
 
 ```
-insalud-ecuador/
+insalud-panama/
 ├── 📄 README.md                    # Documentación principal
 ├── 📄 package.json                 # Dependencias y scripts
 ├── 📄 next.config.ts              # Configuración Next.js
@@ -73,8 +73,7 @@ insalud-ecuador/
 │   │   │   └── 📂 Treatment/
 │   │   │
 │   │   └── 📂 [sedes]/           # Rutas dinámicas por sede
-│   │       ├── 📂 quito/         # Sede Quito
-│   │       └── 📂 guayaquil/     # Sede Guayaquil
+│   │       └── 📂 panama/        # Sede Panamá
 │   │           ├── 📄 layout.tsx # Layout por sede
 │   │           ├── 📂 vph/       # Tratamiento VPH
 │   │           ├── 📂 ondas-de-choque/  # Ondas de Choque
@@ -98,8 +97,7 @@ insalud-ecuador/
 │   │   │   ├── 📄 questionProstatitis.ts
 │   │   │   └── 📄 questionVph.ts
 │   │   └── 📂 sedes/            # Configuración de sedes
-│   │       ├── 📄 quito.ts
-│   │       └── 📄 guayaquil.ts
+│   │       └── 📄 principal.ts
 │   │
 │   ├── 📂 hooks/                 # Custom hooks
 │   │   └── 📄 useContactForm.ts  # Hook para formularios de contacto
@@ -132,8 +130,8 @@ insalud-ecuador/
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone https://github.com/tu-organizacion/insalud-ecuador.git
-cd insalud-ecuador
+git clone https://github.com/tu-organizacion/insalud-panama.git
+cd insalud-panama
 ```
 
 ### 2. Instalar Dependencias
@@ -154,12 +152,12 @@ Crea un archivo `.env.local` en la raíz del proyecto:
 # SMTP Configuration para Nodemailer
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
-SMTP_USER=tu-email@insalud.ec
+SMTP_USER=tu-email@insalud.pa
 SMTP_PASS=tu-app-password
 
 # Next.js Configuration
-NEXT_PUBLIC_CDN_URL=https://cdn.insalud.ec
-NEXT_PUBLIC_SITE_URL=https://insalud.ec
+NEXT_PUBLIC_CDN_URL=https://cdn.insalud.pa
+NEXT_PUBLIC_SITE_URL=https://insalud.pa
 
 # Analytics (opcional)
 NEXT_PUBLIC_GA_TRACKING_ID=G-XXXXXXXXXX
@@ -214,19 +212,19 @@ graph TD
 Cada sede tiene su propia configuración en `/src/data/sedes/`:
 
 ```typescript
-// Ejemplo: quito.ts
-export const quitoData = {
-  name: "Quito",
-  city: "Quito", 
-  country: "Ecuador",
-  address: "Av. 10 de Agosto N24-253",
-  phone: "+593 98 765 4321",
-  email: "contacto.citas@insalud.ec",
+// Ejemplo: principal.ts
+export const principalData = {
+name: "Insalud",
+city: "Panamá",
+country: "Panamá",
+      address: "Consultorio 1000 - Torre A - PANAMÁ - CLINIC",
+      phone: "+507 6371 9084",
+  email: "admision.panama@insalud.pe",
   landings: {
     vph: {
-      gestor: "Misael",
-      email: "gestor.citas5@insalud.pe",
-      whatsapp: "969447773",
+      gestor: "Lisset",
+      email: "admision.panama@insalud.pa",
+      whatsapp: "507 6371 9084",
       message: "¡Hola! Vi su landing de tratamiento para eliminación de verrugas por VPH..."
     }
     // ... otros tratamientos
@@ -245,7 +243,7 @@ export const formLeadsSchema = z.object({
   telefono: z.string()
     .min(10, { message: "Debe tener 10 dígitos" })
     .max(10, { message: "Debe tener 10 dígitos" })
-    .regex(/^09\d{8}$/, { message: "Debe iniciar con 09 (celular ecuatoriano)" }),
+            .regex(/^[6-9]\d{7}$/, { message: "Número de teléfono panameño inválido" }),
   turno: z.string().min(1, { message: "El turno es requerido" }),
 })
 ```
@@ -324,14 +322,14 @@ Los emails incluyen:
 
 ```typescript
 export const metadata: Metadata = {
-  title: "Insalud Ecuador",
-  description: "Red de centros de salud especializados...",
-  keywords: "centro médico quito, hospital quito, servicios médicos ecuador...",
-  openGraph: {
-    title: "Insalud Ecuador",
+  title: "Insalud Panamá",
+description: "Red de centros de salud especializados...",
+keywords: "centro médico panamá, hospital panamá, servicios médicos panamá...",
+openGraph: {
+title: "Insalud Panamá",
     description: "Red de centros de salud especializados...",
     type: "website",
-    locale: "es_EC",
+    locale: "es_PA",
   },
 }
 ```
@@ -444,8 +442,8 @@ export default config
 
 ```typescript
 <FloatingWhatsApp
-  phoneNumber={jesusMariaData.landings.vph.whatsapp}
-  message={jesusMariaData.landings.vph.message}
+  phoneNumber={principalData.landings.vph.whatsapp}
+  message={principalData.landings.vph.message}
   tooltipText="¡Conversemos por WhatsApp!"
 />
 ```
@@ -460,10 +458,10 @@ Cada sede y tratamiento tiene mensajes predefinidos optimizados para conversión
 
 ```bash
 # Feature branch
-git checkout -b feature/nueva-sede-huancayo
+git checkout -b feature/nueva-sede-colon
 git add .
-git commit -m "feat: añadir nueva sede Huancayo"
-git push origin feature/nueva-sede-huancayo
+git commit -m "feat: añadir nueva sede Colón"
+git push origin feature/nueva-sede-colon
 
 # Pull request y merge a main
 ```
@@ -497,19 +495,19 @@ git push origin feature/nueva-sede-huancayo
 
 ## 📞 Soporte y Contacto
 
-- **Email Técnico**: desarrollo@insalud.ec
-- **Email Comercial**: contacto.citas@insalud.ec
-- **WhatsApp**: +593 98 765 4321
+- **Email Técnico**: desarrollo@insalud.pa
+- **Email Comercial**: contacto.citas@insalud.pa
+- **WhatsApp**: +507 6371 9084
 
 ## 📄 Licencia
 
-Este proyecto es propiedad de **Insalud Ecuador** y está protegido por derechos de autor. Todos los derechos reservados.
+Este proyecto es propiedad de **Insalud Panamá** y está protegido por derechos de autor. Todos los derechos reservados.
 
 ## 🔄 Changelog
 
 ### v0.1.0 (Actual)
 - ✅ Implementación inicial con Next.js 15
-- ✅ Sistema multi-sede (Quito, Guayaquil)
+- ✅ Sistema multi-sede (Ciudad de Panamá)
 - ✅ Tratamientos: VPH, Ondas de Choque, Prostatitis
 - ✅ Sistema de formularios con validación
 - ✅ Integración completa de email
@@ -526,6 +524,6 @@ Este proyecto es propiedad de **Insalud Ecuador** y está protegido por derechos
 
 ---
 
-**Desarrollado con ❤️ para Insalud Ecuador**
+**Desarrollado con ❤️ para Insalud Panamá**
 
-*Transformando la atención médica especializada en Ecuador mediante tecnología de vanguardia.*
+*Transformando la atención médica especializada en Panamá mediante tecnología de vanguardia.*
