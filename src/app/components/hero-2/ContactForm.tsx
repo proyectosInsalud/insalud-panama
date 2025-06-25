@@ -131,17 +131,17 @@ export const ContactForm = ({ gestorData, tratamiento, sede }: ContactFormProps)
                       <div className="relative">
                         <Input
                           className="bg-in-cyan md:bg-white font-normal md:font-medium text-in-blue placeholder:text-in-blue placeholder:font-normal placeholder:text-sm md:placeholder:font-medium py-6"
-                          placeholder="Celular (10 dígitos)"
-                          maxLength={10}
+                          placeholder="Celular"
+                          maxLength={8}
                           {...field}
                           onChange={(e) => {
                             const value = e.target.value.replace(/\D/g, '');
                             field.onChange(value);
                           }}
                         />
-                        {field.value && field.value.length > 0 && field.value.length < 10 && (
+                        {field.value && field.value.length > 0 && field.value.length < 8 && (
                           <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-gray-400">
-                            {field.value.length}/10
+                            {field.value.length}/8
                           </div>
                         )}
                       </div>
