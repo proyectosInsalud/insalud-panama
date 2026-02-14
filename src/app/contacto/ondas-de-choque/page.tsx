@@ -1,110 +1,81 @@
-import { AboutDevice } from "@/app/components/AboutDevice";
-import { AppointmentCta } from "@/app/components/AppointmentCta";
-import { Footer } from "@/app/components/Footer";
-import { HeroContact } from "@/app/components/hero-2/HeroContact";
-import { Questions } from "@/app/components/Questions";
-import { TestimonialBubbles } from "@/app/components/TestimonialBubbles";
-import { Treatment } from "@/app/components/Treatment/Treatment";
-import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
-import { questionDisfuncion } from "@/data/questions/questionDisfuncion";
-import { principalData } from "@/data/sedes/principal";
+import Image from "next/image";
+import { getGestorData } from "@/data/sedes/get-gestor";
+import { FloatingWhatsApp } from "@/features/whatsapp/components/FloatingWhatsApp";
+import { Questions } from "@/features/faq/components/Questions";
+import { LeadFormDark } from "@/features/lead-form/components/LeadFormDark";
+import { Hero } from "@/components/Hero";
+import { SintomasSection } from "@/components/SintomasSection";
+import { BeneficiosSection } from "@/components/BeneficiosSection";
+import { EstadisticasSection } from "@/components/EstadisticasSection";
+import { Footer } from "@/components/Footer";
+import { disfuncionFAQs } from "@/content/faqs/disfuncion.es";
+import { TopBanner } from "@/components/TopBanner";
 
-export default function OndasPrincipalPage() {
+const gestor = getGestorData("ondasChoque");
+
+function Section({
+  id,
+  children,
+  className = "",
+  containerClassName = "max-w-6xl",
+}: {
+  id?: string;
+  children: React.ReactNode;
+  className?: string;
+  containerClassName?: string;
+}) {
   return (
-    <>
-      {/* Hero Section */}
-      <HeroContact />
+    <section id={id} className={`py-20 ${className}`}>
+      <div className={`container mx-auto px-4 ${containerClassName}`}>{children}</div>
+    </section>
+  );
+}
 
-      {/* Testimonios Section */}
-      <section id="testimonios">
-        <TestimonialBubbles
-          titleWithColors="La {cyan}disfunción eréctil{/cyan} no solo afecta tu cuerpo. Afecta cómo te {cyan}ves a ti mismo{/cyan}"
-          messages={[
-            "Puede aparecer desde los 30s y empeorar con el tiempo si no se trata.",
-            "No siempre es por estrés o edad. Muchas veces es un problema vascular.",
-            "Las pastillas son temporales. Este tratamiento reactiva el flujo real.",
-          ]}
-        />
-      </section>
-
-      {/* Beneficios Section */}
-      <section id="beneficios">
-        <Treatment
-          titleWithColors="¿Por qué tratarse con {cyan}Ondas de Choque?{/cyan}"
-          subtitle="Descubre los beneficios de esta tecnología de vanguardia."
-          cards={[
-            {
-              title: "Seguro y efectivo",
-              description: "No invasivo y sin efectos secundarios",
-              image:
-                "/campanas/vph-jesus-maria/assets/images/sections/main/icon-seguro.png",
-              alt: "Seguro y efectivo",
-            },
-            {
-              title: "Sin dolor",
-              description:
-                "Tecnología de última generación que minimiza molestias.",
-              image:
-                "/campanas/vph-jesus-maria/assets/images/sections/main/icon-sin-dolor.png",
-              alt: "Sin dolor",
-            },
-            {
-              title: "Rápido retorno",
-              description: "Vuelve a tu rutina al instante.",
-              image:
-                "/campanas/vph-jesus-maria/assets/images/sections/main/icon-rapido.png",
-              alt: "Rápido retorno",
-            },
-            {
-              title: "Resultados visibles",
-              description: "Mejora la erección de forma natural y progresiva.",
-              image:
-                "/campanas/vph-jesus-maria/assets/images/sections/main/icon-resultados.png",
-              alt: "Resultados visibles",
-            },
-          ]}
-        />
-      </section>
-
-      {/* Tecnología Section */}
-      <section id="tecnologia">
-        <AboutDevice
-          titleWithColors="Equipos{blue} que estimulan la {/blue}circulación sanguínea {blue} y promueve erecciones más firmes y duraderas.{/blue}"
-          multipleImages={false}
-          srcDesktop={
-            "/campanas/disfuncion/assets/images/sections/main/disfuncion-device.png"
-          }
-          alt="Dispositivo de disfunción eréctil"
-        />
-      </section>
-
-                  {/* Call to Action */}
-                  <AppointmentCta 
-                title="Recupera tu confianza con Ondas de Choque de Alta Frecuencia, un tratamiento no invasivo y clínicamente probado para mejorar la erección de forma natural y duradera."
-                description="Nuestro equipo de especialistas está listo para ayudarte a dar el primer paso hacia tu bienestar."
-                titleMobile="Recupera tu confianza con un tratamiento clínico eficaz y personalizado"
-                whatsappNumber={principalData.landings.ondasChoque.whatsapp}
-                whatsappMessage={principalData.landings.ondasChoque.message}
-            />
-
-      {/* Preguntas Section */}
-      <section id="preguntas">
-        <Questions questions={questionDisfuncion} />
-      </section>
-
-      {/* WhatsApp Flotante */}
-      <FloatingWhatsApp
-        phoneNumber={principalData.landings.ondasChoque.whatsapp}
-        message={principalData.landings.ondasChoque.message}
-        tooltipText="¿Dudas sobre disfunción eréctil?"
+export default function OndasChoquePage() {
+  return (
+    <div className="min-h-screen bg-[var(--surface-light-blue)]">
+      {/* Banner construido en layout: desktop fila, mobile/tablet apilado */}
+      <TopBanner />
+      <Hero
+        title="¿DISFUNCIÓN ERÉCTIL Y BAJO RENDIMIENTO SEXUAL?"
+        description="Recupera tu confianza y mejora tu desempeño con tratamientos médicos modernos, seguros y personalizados para hombres."
+        benefits={[
+          "Atención médica especializada en salud masculina",
+          "Tratamientos no invasivos y sin cirugía",
+          "Evaluación totalmente confidencial",
+        ]}
+        ctaText="Quiero recuperar mi rendimiento"
+        ctaHref="#lead-form-dark"
       />
 
-      <Footer
-          address={principalData.address}
-          phone={principalData.landings.ondasChoque.whatsapp}
-          email={principalData.email}
-          socials={principalData.socials}
+      <SintomasSection />
+      <BeneficiosSection />
+      <EstadisticasSection />
+
+      {/* FAQ */}
+      <Section containerClassName="max-w-4xl">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
+          <span className="text-[var(--brand-teal)]">Preguntas</span>{" "}
+          <span className="text-[var(--text-primary)]">Frecuentes</span>
+        </h2>
+        <Questions faqs={disfuncionFAQs} />
+      </Section>
+
+      {/* Lead Form */}
+      <Section id="lead-form-dark" containerClassName="max-w-xl">
+        <LeadFormDark
+          defaultValues={{
+            gestorEmail: gestor.email,
+            gestorNombre: gestor.gestor,
+            tratamiento: "Ondas de Choque",
+            sede: "Panama",
+          }}
         />
-    </>
+      </Section>
+
+      <Footer />
+
+      <FloatingWhatsApp phone={gestor.whatsapp} />
+    </div>
   );
 }

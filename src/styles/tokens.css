@@ -1,0 +1,32 @@
+:root {
+  /* Brand - Colores turquesa/verde azulado */
+  --brand-primary: #3277E1;
+  --brand-accent: #20B2AA;
+  --brand-teal: #20B2AA;
+  --brand-teal-light: #E0F7FA;
+  --brand-teal-dark: #00C853;
+  --brand-warning: #FFB74D;
+
+  /* Text */
+  --text-primary: #FFFFFF;
+  --text-secondary: #FFFFFF;
+  --text-link: #20B2AA;
+  --text-on-dark: #FFFFFF;
+
+  /* Surfaces */
+  --surface-light-blue: #13172C;
+  --surface-page: var(--surface-light-blue);
+  --surface-card: var(--surface-light-blue);
+  --surface-dark: var(--surface-light-blue);
+  --shadow-light-blue: #13172C;
+
+  /* Borders */
+  --border-default: #DDDDDD;
+  --border-accent: #20B2AA;
+  --border-light: #E5E5E5;
+
+  /* States */
+  --state-success: #00C853;
+  --state-focus: #20B2AA;
+  --whatsapp-green: #25D366;
+}
