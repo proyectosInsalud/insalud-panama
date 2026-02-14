@@ -32,7 +32,7 @@ export function CtaButton(props: CtaButtonProps) {
 
   const { className: _c, children: _ch, ...buttonProps } = props;
   return (
-    <button type="button" className={cn(baseClasses, className)} {...buttonProps}>
+    <button type="button" className={cn(baseClasses, className)} {...(buttonProps as React.ButtonHTMLAttributes<HTMLButtonElement>)}>
       {children}
     </button>
   );
