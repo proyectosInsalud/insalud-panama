@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     // Metadata
     const ip =
       req.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
-      req.ip ||
+      req.headers.get("x-real-ip") ||
       "unknown";
     const userAgent = req.headers.get("user-agent") || "unknown";
 
