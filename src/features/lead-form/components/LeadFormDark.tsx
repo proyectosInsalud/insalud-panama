@@ -40,7 +40,7 @@ export function LeadFormDark({ defaultValues }: LeadFormDarkProps) {
     <FormProvider {...form}>
       <motion.form
         onSubmit={form.onSubmit}
-        className="space-y-6 rounded-2xl border border-white/10 bg-[color:rgba(19,23,44,0.55)] p-6 md:p-8 shadow-2xl  shadow-[0_20px_60px_-20px_rgba(255,255,255,0.15)]"
+        className="space-y-6 rounded-2xl border border-white/10 bg-[color:rgba(19,23,44,0.55)] p-6 md:p-8 shadow-2xl shadow-[0_20px_60px_-20px_rgba(255,255,255,0.15)]"
         noValidate
         initial="hidden"
         whileInView="visible"
@@ -50,60 +50,70 @@ export function LeadFormDark({ defaultValues }: LeadFormDarkProps) {
           visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
         }}
       >
+        {/* Header */}
         <motion.div className="space-y-3" variants={fadeUp}>
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[12px] uppercase tracking-[0.08em] text-white/80">
             <ShieldCheck className="h-4 w-4 text-[var(--brand-teal)]" />
             Atención 100% confidencial
           </div>
+
           <h2 className="text-xl md:text-2xl font-bold text-white leading-tight">
             Agenda tu cita y recupera tu confianza
           </h2>
+
           <p className="text-white/75 text-sm md:text-base leading-relaxed">
             Respuesta rápida por WhatsApp · Atención discreta · Horarios flexibles.
           </p>
         </motion.div>
 
-        {/* Nombres */}
-        <motion.div className="space-y-2" variants={fadeUp}>
-          <label htmlFor="nombres" className="text-white text-sm font-medium">
-            Nombres y apellidos <span className="text-red-400">*</span>
-          </label>
+        {/* Datos básicos (GRID estable) */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+          }}
+        >
+          <motion.div className="space-y-2 min-w-0" variants={fadeUp}>
+            <label htmlFor="nombres" className="text-white text-sm font-medium">
+              Nombres y apellidos <span className="text-red-400">*</span>
+            </label>
 
-          <Input
-            id="nombres"
-            {...register("nombres")}
-            placeholder="Ej. Juan Pérez"
-            autoComplete="name"
-            aria-invalid={!!errors.nombres}
-            className={`${inputBase} ${errors.nombres ? inputError : ""}`}
-          />
+            <Input
+              id="nombres"
+              {...register("nombres")}
+              placeholder="Ej. Juan Pérez"
+              autoComplete="name"
+              aria-invalid={!!errors.nombres}
+              className={`w-full ${inputBase} ${errors.nombres ? inputError : ""}`}
+            />
 
-          {errors.nombres && (
-            <p className="text-sm text-red-300">{errors.nombres.message}</p>
-          )}
-        </motion.div>
+            {errors.nombres && (
+              <p className="text-sm text-red-300">{errors.nombres.message}</p>
+            )}
+          </motion.div>
 
-        {/* Teléfono */}
-        <motion.div className="space-y-2" variants={fadeUp}>
-          <label htmlFor="telefono" className="text-white text-sm font-medium">
-            Celular <span className="text-red-400">*</span>
-          </label>
+          <motion.div className="space-y-2 min-w-0" variants={fadeUp}>
+            <label htmlFor="telefono" className="text-white text-sm font-medium">
+              Celular <span className="text-red-400">*</span>
+            </label>
 
-          <Input
-            id="telefono"
-            type="tel"
-            {...register("telefono")}
-            placeholder="Ej. 61234567"
-            inputMode="numeric"
-            autoComplete="tel"
-            maxLength={8}
-            aria-invalid={!!errors.telefono}
-            className={`${inputBase} ${errors.telefono ? inputError : ""}`}
-          />
+            <Input
+              id="telefono"
+              type="tel"
+              {...register("telefono")}
+              placeholder="Ej. 61234567"
+              inputMode="numeric"
+              autoComplete="tel"
+              maxLength={8}
+              aria-invalid={!!errors.telefono}
+              className={`w-full ${inputBase} ${errors.telefono ? inputError : ""}`}
+            />
 
-          {errors.telefono && (
-            <p className="text-sm text-red-300">{errors.telefono.message}</p>
-          )}
+            {errors.telefono && (
+              <p className="text-sm text-red-300">{errors.telefono.message}</p>
+            )}
+          </motion.div>
         </motion.div>
 
         {/* Turno */}
@@ -126,7 +136,7 @@ export function LeadFormDark({ defaultValues }: LeadFormDarkProps) {
                 type="radio"
                 {...register("turno")}
                 value="mañana"
-                className="peer h-4 w-4 accent-[var(--brand-teal)]"
+                className="h-4 w-4 accent-[var(--brand-teal)]"
               />
               <div className="text-white">
                 <div className="text-sm font-semibold">Mañana</div>
@@ -147,7 +157,7 @@ export function LeadFormDark({ defaultValues }: LeadFormDarkProps) {
                 type="radio"
                 {...register("turno")}
                 value="tarde"
-                className="peer h-4 w-4 accent-[var(--brand-teal)]"
+                className="h-4 w-4 accent-[var(--brand-teal)]"
               />
               <div className="text-white">
                 <div className="text-sm font-semibold">Tarde</div>
@@ -168,15 +178,17 @@ export function LeadFormDark({ defaultValues }: LeadFormDarkProps) {
             Tiempo de respuesta promedio: &lt; 10 minutos
           </div>
 
-          <CtaButton type="submit" disabled={isSubmitting} className="w-full justify-center gap-2">
+          <CtaButton
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full justify-center gap-2"
+          >
             <Calendar className="h-5 w-5" />
             {isSubmitting ? "Enviando..." : "Agendar cita"}
           </CtaButton>
 
           {form.submitError && (
-            <p className="text-sm text-red-300 text-center">
-              {form.submitError}
-            </p>
+            <p className="text-sm text-red-300 text-center">{form.submitError}</p>
           )}
         </motion.div>
 
