@@ -42,7 +42,7 @@
 - `src/app/api/mail/route.ts` : envío de correos por SMTP.
 - `src/features/lead-form/hooks/useLeadForm.ts` : lógica de submit y redirección a WhatsApp.
 - `src/features/lead-form/api/submitLead.ts` : cliente para `/api/leads`.
-- `src/features/lead-form/components/LeadForm.tsx` y `LeadForm.tsx` : formularios.
+- `src/features/lead-form/components/LeadForm.tsx` : formularios.
 - `src/schemas/index.ts` : `formLeadsSchema` (nombres, telefono, turno, website?, gestorEmail?, gestorNombre?, tratamiento?, sede?).
 - `src/features/whatsapp/utils/build-whatsapp-link.ts` : construye link de WhatsApp con texto único saneado.
 
