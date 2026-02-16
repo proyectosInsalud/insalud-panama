@@ -2,7 +2,7 @@ import { principalData } from "@/data/sedes/principal";
 import { getGestorData } from "@/data/sedes/get-gestor";
 import { FloatingWhatsApp } from "@/features/whatsapp/components/FloatingWhatsApp";
 import { Questions } from "@/features/faq/components/Questions";
-import { LeadFormDark } from "@/features/lead-form/components/LeadFormDark";
+import { LeadForm } from "@/features/lead-form/components/LeadForm";
 import { Hero } from "@/components/Hero";
 import { SintomasSection } from "@/components/SintomasSection";
 import { BeneficiosSection } from "@/components/BeneficiosSection";
@@ -52,7 +52,7 @@ export default function ProstatitisPage() {
         <div className="container mx-auto px-4 max-w-xl">
           <div className="relative rounded-2xl p-[1px] bg-[color:rgba(19,23,44,0.25)] backdrop-blur shadow-xl">
             <div className="bg-[var(--surface-dark)] rounded-[1.05rem] p-8 md:p-10 shadow-[0_24px_60px_-28px_rgba(15,23,42,0.6)]">
-              <LeadFormDark
+              <LeadForm
                 defaultValues={{
                   gestorEmail: gestor.email,
                   gestorNombre: gestor.gestor,

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { getGestorData } from "@/data/sedes/get-gestor";
 import { FloatingWhatsApp } from "@/features/whatsapp/components/FloatingWhatsApp";
 import { Questions } from "@/features/faq/components/Questions";
-import { LeadFormDark } from "@/features/lead-form/components/LeadFormDark";
+import { LeadForm } from "@/features/lead-form/components/LeadForm";
 import { Hero } from "@/components/Hero";
 import { SintomasSection } from "@/components/SintomasSection";
 import { BeneficiosSection } from "@/components/BeneficiosSection";
@@ -63,7 +63,7 @@ export default function OndasChoquePage() {
 
       {/* Lead Form */}
       <Section id="lead-form-dark" containerClassName="max-w-xl">
-        <LeadFormDark
+        <LeadForm
           defaultValues={{
             gestorEmail: gestor.email,
             gestorNombre: gestor.gestor,
