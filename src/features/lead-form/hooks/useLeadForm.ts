@@ -18,6 +18,7 @@ export function useLeadForm(defaultValues?: Partial<FormLeads>) {
       nombres: "",
       telefono: "",
       turno: "",
+      website: "",
       ...defaultValues,
     },
   });
@@ -41,13 +42,8 @@ export function useLeadForm(defaultValues?: Partial<FormLeads>) {
         return;
       }
 
-      // Mensaje prellenado (ajústalo a tu copy)
-      const text = `Hola, acabo de enviar el formulario.
-Nombre: ${data.nombres}
-Celular: ${data.telefono}
-Turno: ${data.turno}`;
-
-      const whatsappUrl = `${buildWhatsAppLink(phone)}?text=${encodeURIComponent(text)}`;
+      // Mensaje prellenado (solo copy base, sin datos personales)
+      const whatsappUrl = buildWhatsAppLink(phone);
 
       // redirección externa
       window.location.assign(whatsappUrl);

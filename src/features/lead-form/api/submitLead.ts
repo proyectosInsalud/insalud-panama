@@ -4,7 +4,7 @@ export async function submitLead(
   data: FormLeads
 ): Promise<{ success: boolean; message: string }> {
   try {
-    const response = await fetch("/api/mail", {
+    const response = await fetch("/api/leads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -12,16 +12,16 @@ export async function submitLead(
 
     const result = await response.json().catch(() => ({} as any));
 
-    if (!response.ok) {
+    if (!response.ok || result.ok === false) {
       return {
         success: false,
-        message: result.mensaje || "Error al enviar el formulario",
+        message: result.error || result.mensaje || "Error al enviar el formulario",
       };
     }
 
     return {
       success: true,
-      message: result.mensaje || "Formulario enviado correctamente",
+      message: result.message || result.mensaje || "Formulario enviado correctamente",
     };
   } catch {
     return {

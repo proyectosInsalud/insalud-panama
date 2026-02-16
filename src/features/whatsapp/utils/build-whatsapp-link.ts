@@ -1,8 +1,12 @@
-export function buildWhatsAppLink(phone: string): string {
+export function buildWhatsAppLink(
+  phone: string,
+  text?: string
+): string {
   const cleanPhone = phone.replace(/\D/g, "");
-  const text = encodeURIComponent(
-    "Hola, quiero empezar mi tratamiento con Ondas de Choque. Los vi en Google."
-  );
+  const message =
+    text ??
+    "Hola, quiero empezar mi tratamiento con Ondas de Choque. Los vi en Google.";
 
-  return `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${text}`;
+  const encoded = encodeURIComponent(message);
+  return `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encoded}`;
 }

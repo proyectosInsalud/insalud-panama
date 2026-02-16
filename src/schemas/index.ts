@@ -9,6 +9,7 @@ export const formLeadsSchema = z.object({
     .max(8, { message: "Debe tener maximo 8 digitos" })
     .regex(/^6\d{0,7}$/, { message: "Telefono invalido" }),
   turno: z.string().min(1, { message: "El turno es requerido" }),
+  website: z.string().optional(), // honeypot anti-spam
   gestorEmail: z.string().optional(),
   gestorNombre: z.string().optional(),
   tratamiento: z.string().optional(),

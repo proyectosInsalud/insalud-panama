@@ -50,6 +50,16 @@ export function LeadFormDark({ defaultValues }: LeadFormDarkProps) {
           visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
         }}
       >
+        {/* Honeypot */}
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden"
+          aria-hidden="true"
+          {...register("website")}
+        />
+
         {/* Header */}
         <motion.div className="space-y-3" variants={fadeUp}>
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[12px] uppercase tracking-[0.08em] text-white/80">

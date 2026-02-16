@@ -33,6 +33,16 @@ export function LeadForm({ defaultValues }: LeadFormProps) {
   return (
     <FormProvider {...form}>
       <motion.form onSubmit={form.onSubmit} className="space-y-4" variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        {/* Honeypot */}
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden"
+          aria-hidden="true"
+          {...form.register("website")}
+        />
+
         <motion.div variants={fadeUp}>
           <Label htmlFor="nombres" required>
             Nombres completos
