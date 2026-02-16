@@ -3,13 +3,13 @@ export function getGestorData(landing: "ondasChoque" | "prostatitis") {
   
   const gestores = {
     ondasChoque: {
-      gestor: "Lisset",
+      gestor: "Liset",
       email: process.env.NEXT_PUBLIC_EMAIL,
       whatsapp,
       message: "Hola, quiero informacion sobre Ondas de Choque",
     },
     prostatitis: {
-      gestor: "Lisset",
+      gestor: "Liset",
       email: process.env.NEXT_PUBLIC_EMAIL,
       whatsapp,
       message: "Hola, quiero informacion sobre Prostatitis",

@@ -2,8 +2,10 @@
 
 import { Check, ThumbsUp } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
-import { CtaButton } from "@/shared/ui/CtaButton";
 import Image from "next/image";
+import { CtaButton } from "@/shared/ui/CtaButton";
+import { useSmoothCta } from "@/shared/lib/hooks/useSmoothCta";
+import { cn } from "@/shared/lib/utils/cn";
 
 const sintomas = [
   "Erecciones menos firmes",
@@ -13,6 +15,11 @@ const sintomas = [
 ];
 
 export function SintomasSection() {
+  const { active: scrolling, handleCta, motionProps } = useSmoothCta({
+    href: "#lead-form-dark",
+    durationMs: 1000,
+  });
+
   const fadeUp: Variants = {
     hidden: { opacity: 0, y: 24 },
     visible: {
@@ -51,23 +58,23 @@ export function SintomasSection() {
             >
               {/* Placeholder oscuro coherente con la sección */}
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-  <Image
-    src="/images/jpg/young-frustrated-man-having-sexual-problems-while-2024-11-19-11-27-31-utc.jpg"
-    alt="Pareja con dificultades íntimas"
-    fill
-    className="object-cover"
-    sizes="(max-width: 768px) 100vw, 50vw"
-    priority
-  />
+                <Image
+                  src="/images/jpg/young-frustrated-man-having-sexual-problems-while-2024-11-19-11-27-31-utc.jpg"
+                  alt="Pareja con dificultades íntimas"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
 
-  {/* Overlay suave para integración visual */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-white/10" />
+                {/* Overlay suave para integración visual */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-white/10" />
 
-  {/* Glow sutil para profundidad */}
-  <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-    <div className="w-[60%] h-[60%] bg-[var(--brand-teal)]/10 blur-3xl rounded-full" />
-  </div>
-</div>
+                {/* Glow sutil para profundidad */}
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <div className="w-[60%] h-[60%] bg-[var(--brand-teal)]/10 blur-3xl rounded-full" />
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -123,9 +130,16 @@ export function SintomasSection() {
               </p>
             </div>
 
-            <CtaButton href="#lead-form-dark" className="inline-flex items-center justify-center rounded-xl px-10 py-4 font-semibold bg-[var(--brand-teal)] text-white shadow-md transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100">
-              Quiero recuperar mi rendimiento
-            </CtaButton>
+            <motion.div {...motionProps}>
+              <CtaButton
+                href="#lead-form-dark"
+                onClick={handleCta}
+                className={cn("inline-flex items-center justify-center rounded-xl px-10 py-4 font-semibold bg-[var(--brand-teal)] text-white shadow-md transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100", scrolling ? "pointer-events-none" : undefined)}
+                aria-busy={scrolling}
+              >
+                {scrolling ? "Llevandote al formulario..." : "Quiero recuperar mi rendimiento"}
+              </CtaButton>
+            </motion.div>
           </motion.div>
         </motion.div>
       </motion.div>
