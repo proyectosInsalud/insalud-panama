@@ -2,12 +2,8 @@
 User-agent: *
 Disallow: /api
 
-# *
-User-agent: *
-Allow: /
-
 # Host
-Host: https://inb2b.com
+Host: https://app.insalud.pa
 
 # Sitemaps
-Sitemap: https://inb2b.com/sitemap.xml
+Sitemap: https://app.insalud.pa/sitemap.xml

@@ -1,12 +1,11 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://inb2b.com',
-    generateRobotsTxt: true, // crea robots.txt automáticamente
+    siteUrl: 'https://app.insalud.pa',    // ← aquí va tu dominio real
+    generateRobotsTxt: true,
     robotsTxtOptions: {
-        policies: [
-          { userAgent: '*', disallow: ['/api'] },  // bloquea todas las URLs que empiecen con /api
-          { userAgent: '*', allow: '/' },          // permite el resto del sitio
-        ],
+      policies: [
+        { userAgent: '*', disallow: ['/api'] }, // bloquea API
+      ],
     },
     changefreq: 'weekly',
     priority: 0.7,
