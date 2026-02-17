@@ -20,7 +20,7 @@ export function Footer() {
             </div>
 
             <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-              Más de 20,000 tratamientos realizados con excelentes resultados.
+              Más de 110 000 tratamientos realizados con excelentes resultados.
               Terapia especializada para recuperar confianza y bienestar.
             </p>
           </div>

@@ -4,7 +4,7 @@ import { Heart, Users, Award, MapPin } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 
 const stats = [
-  { icon: Users, value: "+105 000", label: "Procedimientos realizados con éxito" },
+  { icon: Users, value: "+110 000", label: "Procedimientos realizados con éxito" },
   { icon: Award, value: "+25 000", label: "Pacientes satisfechos" },
   { icon: MapPin, value: "9", label: "Sedes especializadas en Latinoamérica" },
 ];
