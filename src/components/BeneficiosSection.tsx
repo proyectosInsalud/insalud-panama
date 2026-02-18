@@ -78,7 +78,7 @@ export function BeneficiosSection() {
           >
             <div className="relative w-[520px] h-[420px]">
               <Image
-                src="/images/png/tratamiento-ondas.png"
+                src="/images/png/tratamiento-ondas.webp"
                 alt="Tratamiento ondas de choque"
                 fill
                 className="object-cover rounded-3xl shadow-2xl"

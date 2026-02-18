@@ -104,7 +104,7 @@ export function Hero({
               </div>
 
               <Image
-                src="/images/jpg/head-full-thoughts-when-she-is-around.jpg"
+                src="/images/jpg/head-full-thoughts-when-she-is-around.webp"
                 alt="Tratamiento medico"
                 fill
                 priority
