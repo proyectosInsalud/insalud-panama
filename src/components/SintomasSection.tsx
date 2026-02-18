@@ -59,7 +59,7 @@ export function SintomasSection() {
               {/* Placeholder oscuro coherente con la sección */}
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/jpg/young-frustrated-man-having-sexual-problems-while-2024-11-19-11-27-31-utc.webp"
+                  src="/images/webp/young-frustrated-man-having-sexual-problems-while-2024-11-19-11-27-31-utc.webp"
                   alt="Pareja con dificultades íntimas"
                   fill
                   className="object-cover"

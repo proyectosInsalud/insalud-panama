@@ -10,7 +10,7 @@ export function TopBanner() {
         <div className="hidden sm:flex items-center gap-4">
           {/* Logo izquierda */}
           <Image
-            src="/images/png/logo_png.webp"
+            src="/images/webp/logo_png.webp"
             alt="Insalud"
             width={90}
             height={30}
@@ -42,7 +42,7 @@ export function TopBanner() {
 
           <div className="mt-3 flex justify-start">
             <Image
-              src="/images/png/logo_png.webp"
+              src="/images/webp/logo_png.webp"
               alt="Insalud"
               width={90}
               height={30}
